@@ -70,9 +70,9 @@ export default function Home() {
   return (
     <div className="--container font-sans w-full h-auto bg-white">
       <NavBar />
-      <main className="w-full h-full py-2 px-8">
+      <main className="w-full h-full py-2 px-4 sm:px-8">
         <div className="--main-content w-full h-full bg-[#f8f9fd] rounded-[30px]">
-          <div className="--grid-wrapper w-full h-full grid lg:grid-cols-[3fr_1fr] grid-cols-1 gap-4 p-8">
+          <div className="--grid-wrapper w-full h-full grid lg:grid-cols-[3fr_1fr] grid-cols-1 gap-4 p-4 sm:p-8">
             <div className="--wrapper-camera-and-kosakata-and-button w-full h-full grid grid-cols-1 gap-4">
               <div className="--wrapper-camera-and-kosakata w-full h-[calc(100%-120px)] grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-4">
                 <div className="--camera-and-button w-full h-full flex flex-col gap-4">
@@ -154,7 +154,7 @@ export default function Home() {
                       </button>
                     </div>
                   </div>
-                  <div className="--wrapper-button w-fit shadow-11 h-[150px] flex bg-white p-4 rounded-xl items-center gap-4">
+                  <div className="--wrapper-button w-full lg:w-fit shadow-11 h-auto sm:h-[150px] flex bg-white p-4 rounded-xl justify-center lg:justify-start items-center gap-4">
                     <div className="--button-repeat-sign w-[100px]">
                       <button className="w-[100px] cursor-pointer flex justify-center h-full p-4 mb-2 bg-[#f8f9fd] rounded-lg text-white font-semibold hover:bg-gray-200 transition-colors">
                         <svg

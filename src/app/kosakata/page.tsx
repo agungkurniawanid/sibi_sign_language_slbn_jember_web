@@ -39,10 +39,10 @@ export default function KosakataPage() {
   return (
     <div className="--container font-sans w-full h-auto bg-white">
       <NavBar onToggleChange={setIsSearchOpen} />
-      <div className="--wrapper-content w-full py-2 px-8">
+      <div className="--wrapper-content w-full py-2 px-4 sm:px-8">
         <div className="--wrapper-content-search w-full flex justify-center items-center">
           {isSearchOpen && (
-            <div className="--main-content-search w-[41.5%]">
+            <div className="--main-content-search w-full lg:w-[40%]">
               <div className="--search-component w-full">
                 <SearchKosakata visible onSelect={handleAddResult} />
               </div>
