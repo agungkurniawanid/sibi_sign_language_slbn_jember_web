@@ -2,17 +2,27 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { ModeToggle } from "./theme-button";
+import { useTheme } from "next-themes";
+import { SearchToggle } from "./search-component";
 
-export default function NavBar() {
+export default function NavBar({
+  onToggleChange,
+}: {
+  onToggleChange?: (state: boolean) => void;
+}) {
   const pathname = usePathname();
+  const { theme } = useTheme();
 
   return (
     <div className="w-full flex justify-center px-2 py-4">
-      <nav className="font-sans flex items-center justify-between w-full max-w-lg rounded-[10px] bg-white px-6 py-3 shadow-11">
+      <nav className={`font-sans flex items-center justify-between w-[40%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[10px] px-6 py-3 shadow-11 ${
+        theme === 'dark' ? 'bg-gray-800' : 'bg-white'
+      }`}>
         <div className="--logo-and-title flex items-center gap-2">
           <div className="--logo">
             <Image
-              src={"/images/logos/g1.png"}
+              src={theme === 'dark' ? "/images/logos/g1.png" : "/images/logos/g1.png"}
               width={40}
               height={40}
               alt="logo"
@@ -20,9 +30,15 @@ export default function NavBar() {
             />
           </div>
           <div className="--title relative flex items-center text-lg font-semibold">
-            <span className="text-[#4251AB] text-2xl font-black">Spok</span>
-            <span className="text-[#DEDADE] text-2xl font-extrabold">Sibi</span>
-            <span className="text-[#4251AB] text-2xl font-black">.</span>
+            <span className={`text-2xl font-black ${
+              theme === 'dark' ? 'text-blue-400' : 'text-[#4251AB]'
+            }`}>Spok</span>
+            <span className={`text-2xl font-extrabold ${
+              theme === 'dark' ? 'text-gray-300' : 'text-[#DEDADE]'
+            }`}>Sibi</span>
+            <span className={`text-2xl font-black ${
+              theme === 'dark' ? 'text-blue-400' : 'text-[#4251AB]'
+            }`}>.</span>
           </div>
         </div>
 
@@ -33,8 +49,8 @@ export default function NavBar() {
                 href="/" 
                 className={`flex items-center gap-1 px-3 py-2 rounded-[10px] transition-colors ${
                   pathname === "/" 
-                    ? "bg-[#4251AB] text-white" 
-                    : "hover:text-[#4251AB]"
+                    ? (theme === 'dark' ? 'bg-blue-600 text-white' : 'bg-[#4251AB] text-white') 
+                    : (theme === 'dark' ? 'hover:text-blue-400' : 'hover:text-[#4251AB]')
                 }`}
               >
                 <svg
@@ -57,8 +73,8 @@ export default function NavBar() {
                 href="/kosakata" 
                 className={`flex items-center gap-1 px-3 py-2 rounded-[10px] transition-colors ${
                   pathname === "/kosakata" 
-                    ? "bg-[#4251AB] text-white" 
-                    : "hover:text-[#4251AB]"
+                    ? (theme === 'dark' ? 'bg-blue-600 text-white' : 'bg-[#4251AB] text-white') 
+                    : (theme === 'dark' ? 'hover:text-blue-400' : 'hover:text-[#4251AB]')
                 }`}
               >
                 <svg
@@ -74,6 +90,12 @@ export default function NavBar() {
                 </svg>
                 <span>Kosakata</span>
               </Link>
+            </li>
+            <li>
+              <ModeToggle/>
+            </li>
+            <li>
+              <SearchToggle onChange={onToggleChange}/>
             </li>
           </ul>
         </div>

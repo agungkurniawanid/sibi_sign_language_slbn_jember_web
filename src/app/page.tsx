@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import NavBar from "./components/NavBar";
+import NavBar from "../components/NavBar";
 import Image from "next/image";
 
 export default function Home() {
@@ -88,7 +88,7 @@ export default function Home() {
                     {!isCameraOn && (
                       <div className="absolute inset-0 flex items-center justify-center bg-[#fece60]">
                         <div className="flex items-center">
-                          <span className="text-black text-[24px] font-bold absolute z-10 left-10 top-10 w-1/3 text-shadow-2xs">
+                          <span className="text-black text-[24px] font-bold absolute z-10 left-5 top-5 w-1/2 lg:left-5 lg:top-5 2xl:left-10 2xl:top-10 lg:w-1/2 2xl:w-1/4 text-shadow-2xs">
                             Mohon Dibantu Untuk Hidupkan Kamera!
                           </span>
                           <Image
@@ -255,14 +255,14 @@ export default function Home() {
                 <div className="w-full h-px bg-gray-200 mb-4"></div>
 
                 <div className="flex-1 overflow-y-auto pr-2">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="grid grid-cols-1 xl:grid-cols-2 gap-3">
                     <div className="p-3 rounded-lg bg-green-50 border border-blue-100 flex items-center justify-between">
                       <span className="font-medium text-gray-700">Saya</span>
-                      <span className="px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm font-semibold">
+                      <span className="px-3 xl:px-3 lg:px-1 py-1 bg-green-200 text-green-800 rounded-full text-sm font-semibold">
                         90%
                       </span>
                     </div>
-
+ 
                     <div className="p-3 rounded-lg bg-green-50 border border-green-100 flex items-center justify-between">
                       <span className="font-medium text-gray-700">Makan</span>
                       <span className="px-3 py-1 bg-green-200 text-green-800 rounded-full text-sm font-semibold">
