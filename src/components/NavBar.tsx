@@ -15,8 +15,8 @@ export default function NavBar({
   const { theme } = useTheme();
 
   return (
-    <div className="w-full flex justify-center px-2 py-4">
-      <nav className={`font-sans flex items-center justify-between w-[40%] lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[10px] px-6 py-3 shadow-11 ${
+    <div className="w-full flex justify-center px-8 py-4">
+      <nav className={`font-sans flex items-center justify-between w-full lg:w-[60%] xl:w-[50%] 2xl:w-[40%] rounded-[10px] px-6 py-3 shadow-11 ${
         theme === 'dark' ? 'bg-gray-800' : 'bg-white'
       }`}>
         <div className="--logo-and-title flex items-center gap-2">
@@ -91,10 +91,10 @@ export default function NavBar({
                 <span>Kosakata</span>
               </Link>
             </li>
-            <li>
+            <li className="sm:flex hidden">
               <ModeToggle/>
             </li>
-            <li>
+            <li className="sm:flex hidden">
               <SearchToggle onChange={onToggleChange}/>
             </li>
           </ul>

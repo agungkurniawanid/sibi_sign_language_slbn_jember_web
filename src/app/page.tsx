@@ -72,11 +72,11 @@ export default function Home() {
       <NavBar />
       <main className="w-full h-full py-2 px-8">
         <div className="--main-content w-full h-full bg-[#f8f9fd] rounded-[30px]">
-          <div className="--grid-wrapper w-full h-full grid grid-cols-[3fr_1fr] gap-4 p-8">
+          <div className="--grid-wrapper w-full h-full grid lg:grid-cols-[3fr_1fr] grid-cols-1 gap-4 p-8">
             <div className="--wrapper-camera-and-kosakata-and-button w-full h-full grid grid-cols-1 gap-4">
-              <div className="--wrapper-camera-and-kosakata w-full h-[calc(100%-120px)] grid grid-cols-[2fr_1fr] gap-4">
+              <div className="--wrapper-camera-and-kosakata w-full h-[calc(100%-120px)] grid grid-cols-1 sm:grid-cols-[2fr_1fr] gap-4">
                 <div className="--camera-and-button w-full h-full flex flex-col gap-4">
-                  <div className="--camera relative w-full h-full rounded-xl overflow-hidden">
+                  <div className="--camera relative w-full h-[350px] sm:h-full rounded-xl overflow-hidden">
                     <video
                       ref={videoRef}
                       autoPlay
