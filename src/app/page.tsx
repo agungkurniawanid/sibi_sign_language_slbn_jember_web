@@ -89,7 +89,7 @@ export default function Home() {
                       <div className="absolute inset-0 flex items-center justify-center bg-[#fece60]">
                         <div className="flex items-center">
                           <span className="text-black text-[24px] font-bold absolute z-10 left-5 top-5 w-1/2 lg:left-5 lg:top-5 2xl:left-10 2xl:top-10 lg:w-1/2 2xl:w-1/4 text-shadow-2xs">
-                            Mohon Dibantu Untuk Hidupkan Kamera!
+                            Mohon Untuk Hidupkan Kamera!
                           </span>
                           <Image
                             src={
